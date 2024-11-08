@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détecteur de Faux Comptes Instagram</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Détecteur de Faux Comptes Instagram</h1>
+            <p class="subtitle">Choisisez entre Analyse Manuelle ou Exemples de Comptes</p>
+        </header>
+
+        <!-- Onglets de navigation -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="manual">Analyse Manuelle</button>
+            <button class="tab-button" data-tab="examples">Exemples de Comptes</button>
+        </div>
+
+        <!-- Section Analyse Manuelle -->
+        <div id="manual" class="tab-content active">
+            <h2>Analyse d'un Compte</h2>
+            <form id="analysis-form" class="analysis-form">
+
+                <!-- Photo de profil -->
+                <div class="form-group">
+                    <label class="form-label">Photo de profil présente ?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="profile_pic_yes" name="profile_pic" value="true">
+                            <label for="profile_pic_yes" class="radio-label">Oui</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="profile_pic_no" name="profile_pic" value="false">
+                            <label for="profile_pic_no" class="radio-label">Non</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="username_numbers">Pourcentage de chiffres dans le nom d'utilisateur (0-100)</label>
+                    <input type="number" id="username_numbers" name="username_numbers" min="0" max="100" required>
+                </div>
+
+                <!-- Description -->
+                <div class="form-group">
+                    <label for="description_length">Longueur de la description</label>
+                    <input type="number" id="description_length" name="description_length" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Compte privé ?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="private_yes" name="private" value="true">
+                            <label for="private_yes" class="radio-label">Oui</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="private_no" name="private" value="false">
+                            <label for="private_no" class="radio-label">Non</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistiques -->
+                <div class="form-group">
+                    <label for="posts">Nombre de posts</label>
+                    <input type="number" id="posts" name="posts" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="followers">Nombre d'abonnés</label>
+                    <input type="number" id="followers" name="followers" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="follows">Nombre d'abonnements</label>
+                    <input type="number" id="follows" name="follows" min="0" required>
+                </div>
+
+                <button type="submit" class="submit-button">Analyser</button>
+            </form>
+
+            <!-- Zone de résultat pour l'analyse manuelle -->
+            <div id="manual-result" class="result-box" style="display: none;">
+                <h3>Résultat de l'analyse</h3>
+                <div id="manual-result-content"></div>
+            </div>
+        </div>
+
+        <!-- Section Exemples -->
+        <div id="examples" class="tab-content">
+            <h2>Exemples de Comptes</h2>
+            <div class="examples-grid">
+                {% for example in example_cases %}
+                <div class="example-card" id="example-{{ example.id }}">
+                    <h3>{{ example.name }}</h3>
+                    <div class="stats">
+                        <ul>
+                            {% for key, value in example.characteristics.items() %}
+                            <li><strong>{{ key }}:</strong> {{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="actions">
+                        <button class="analyze-example" data-id="{{ example.id }}">
+                            Analyser cet exemple
+                        </button>
+                    </div>
+                    <!-- Zone de résultat pour cet exemple -->
+                    <div class="example-result" style="display: none;">
+                        <div class="verdict">
+                            <h4 class="verdict-text"></h4>
+                            <p class="verdict-explanation"></p>
+                            <div class="verdict-details">
+                                <p class="confidence"></p>
+                                <div class="important-features">
+                                    <h5>Caractéristiques importantes :</h5>
+                                    <ul class="features-list"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

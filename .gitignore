@@ -1,0 +1,14 @@
+# Ignorer l'environnement virtuel
+venv/
+
+# Fichiers spécifiques au système d'exploitation
+*.DS_Store
+*.pyc
+__pycache__/
+
+# Ignorer les configurations de l'éditeur
+.vscode/
+
+# Fichiers temporaires
+*.log
+*.sqlite3

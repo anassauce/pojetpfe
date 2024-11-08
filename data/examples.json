@@ -1,0 +1,136 @@
+{
+  "examples": [
+    {
+      "id": "compte_1",
+      "name": "Compte Instagram #1",
+      "characteristics": {
+        "Photo de profil": "Oui",
+        "Proportion de chiffres dans le username": "0%",
+        "Longueur de la description": 82,
+        "Compte privé": "Non",
+        "Nombre de posts": 679,
+        "Nombre d'abonnés": 414,
+        "Nombre d'abonnements": 651
+      },
+      "raw_values": {
+        "profile pic": 1,
+        "nums/length username": 0,
+        "description length": 82,
+        "private": 0,
+        "#posts": 679,
+        "#followers": 414,
+        "#follows": 651
+      }
+    },
+    {
+      "id": "compte_2",
+      "name": "Compte Instagram #2",
+      "characteristics": {
+        "Photo de profil": "Non",
+        "Proportion de chiffres dans le username": "44%",
+        "Longueur de la description": 112,
+        "Compte privé": "Non",
+        "Nombre de posts": 4,
+        "Nombre d'abonnés": 415,
+        "Nombre d'abonnements": 1445
+      },
+      "raw_values": {
+        "profile pic": 0,
+        "nums/length username": 0.44,
+        "description length": 112,
+        "private": 0,
+        "#posts": 4,
+        "#followers": 415,
+        "#follows": 1445
+      }
+    },
+    {
+      "id": "compte_3",
+      "name": "Compte Instagram #3",
+      "characteristics": {
+        "Photo de profil": "Oui",
+        "Proportion de chiffres dans le username": "0%",
+        "Longueur de la description": 54,
+        "Compte privé": "Non",
+        "Nombre de posts": 648,
+        "Nombre d'abonnés": 9884,
+        "Nombre d'abonnements": 1173
+      },
+      "raw_values": {
+        "profile pic": 1,
+        "nums/length username": 0,
+        "description length": 54,
+        "private": 0,
+        "#posts": 648,
+        "#followers": 9884,
+        "#follows": 1173
+      }
+    },
+    {
+      "id": "compte_4",
+      "name": "Compte Instagram #4",
+      "characteristics": {
+        "Photo de profil": "Oui",
+        "Proportion de chiffres dans le username": "89%",
+        "Longueur de la description": 0,
+        "Compte privé": "Non",
+        "Nombre de posts": 8,
+        "Nombre d'abonnés": 341,
+        "Nombre d'abonnements": 2287
+      },
+      "raw_values": {
+        "profile pic": 1,
+        "nums/length username": 0.89,
+        "description length": 0,
+        "private": 0,
+        "#posts": 8,
+        "#followers": 341,
+        "#follows": 2287
+      }
+    },
+    {
+      "id": "compte_5",
+      "name": "Compte Instagram #5",
+      "characteristics": {
+        "Photo de profil": "Oui",
+        "Proportion de chiffres dans le username": "18%",
+        "Longueur de la description": 9,
+        "Compte privé": "Non",
+        "Nombre de posts": 497,
+        "Nombre d'abonnés": 5315651,
+        "Nombre d'abonnements": 2703
+      },
+      "raw_values": {
+        "profile pic": 1,
+        "nums/length username": 0.18,
+        "description length": 9,
+        "private": 0,
+        "#posts": 497,
+        "#followers": 5315651,
+        "#follows": 2703
+      }
+    },
+    {
+      "id": "compte_6",
+      "name": "Compte Instagram #6",
+      "characteristics": {
+        "Photo de profil": "Non",
+        "Proportion de chiffres dans le username": "62%",
+        "Longueur de la description": 0,
+        "Compte privé": "Non",
+        "Nombre de posts": 1,
+        "Nombre d'abonnés": 17,
+        "Nombre d'abonnements": 34
+      },
+      "raw_values": {
+        "profile pic": 0,
+        "nums/length username": 0.62,
+        "description length": 0,
+        "private": 0,
+        "#posts": 1,
+        "#followers": 17,
+        "#follows": 34
+      }
+    }
+  ]
+}
